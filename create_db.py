@@ -10,6 +10,9 @@ try:
         database=db_name,
         port=port
     )
+
+    connection.autocommit = True
+
     with connection.cursor() as cursor:
         cursor.execute(
             """CREATE TABLE notes(
